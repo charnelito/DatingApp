@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 using DatingApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Controllers
 {
@@ -20,8 +20,9 @@ namespace DatingApp.API.Controllers
             _context = context;
         }
         // GET api/values
+        // public ActionResult<IEnumerable<string>> Get()
+        [AllowAnonymous]
         [HttpGet]
-        //public ActionResult<IEnumerable<string>> Get()
         public async Task<IActionResult> GetValues()
         {
             //throw new Exception("Test Exception");
